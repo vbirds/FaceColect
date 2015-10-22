@@ -23,9 +23,13 @@ private slots:
     void photodetec();
     void Saveface();
 
+    void FaceCollect();
+
+
 private:
     Ui::MainWindow *ui;
     facedetec *face;
+    QString   faceCollectPath;
 
 };
 

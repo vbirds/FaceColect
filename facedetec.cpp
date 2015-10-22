@@ -5,11 +5,13 @@
 facedetec::facedetec()
 {
     this->faceResult = NULL;
+    this->startCloecFace = false;
 }
 
 facedetec::~facedetec()
 {
     this->faceResult = NULL;
+    this->startCloecFace = false;
 }
 
 void facedetec::Detecface(QString &path)
@@ -32,7 +34,6 @@ void facedetec::Detecface(QString &path)
     this->BaseDetec(frame, &(this->faceResult));
     this->DrawFace(frame, this->faceResult);
     waitKey(30);
-
 
 }
 
@@ -61,6 +62,7 @@ void facedetec::BaseDetec(Mat &frame, int **result)
 
 void facedetec::VideoDetecFace(int deiverId)
 {
+    int  num = 0;
     VideoCapture cap(deiverId);
     if(cap.isOpened())
     {
@@ -71,6 +73,12 @@ void facedetec::VideoDetecFace(int deiverId)
             cap >> frame;
             this->BaseDetec(frame, &result);
             this->DrawFace(frame, result);
+            if(this->startCloecFace)
+            {
+                num++;
+                this->VideoSavePhoto(frame, result, this->videoColectPath, num);
+                qDebug() << num;
+            }
             char key = (char) waitKey(20);
             if(key == 27)
                 break;
@@ -127,11 +135,96 @@ int facedetec::SavePhoto(Mat& frame, int *result, QString &path, int width, int 
     return rect;
 }
 
+/********************************************
+ * 为摄像采集人脸的保存人脸函数
+ *
+ * @param: Mat &frmae : 图像
+ * @param：int *result : 检测到人人脸坐标 信息
+ * @param: QString path: 文件存放绝对路径
+ * @param: int num: 头像的标号
+ * @param: int vwidth: 头像宽 默认为92
+ * @param: int vheight:头像高 默认为112
+ * ******************************************/
+void facedetec::VideoSavePhoto(Mat &frame, int *result, QString path, int num, int vwidth, int vheight)
+{
+    if(path.isEmpty() || !frame.data)
+    {
+        qDebug() << "func facedetec::VideoSavePhoto() check  if(path.isEmpty())";
+        return;
+    }
+    QString snum = QString::number(num);
+    QString fpath = path + "/" + snum + ".jpg";
+
+    if(result ? *result : 0)
+    {
+        short * p = ((short*)(result+1));
+        int x = p[0];
+        int y = p[1];
+        int w = p[2];
+        int h = p[3];
+
+        Rect face_i = Rect(x, y, w, h);
+        Mat face = frame(face_i);
+        Mat resized;
+
+        cvtColor(face, face, CV_BGR2GRAY);
+        cv::resize(face, resized, Size(vwidth, vheight), CV_INTER_AREA);
+        imwrite(fpath.toStdString(), resized);
+        snum.clear();
+        fpath.clear();
+    }
+}
 
 int facedetec::SaveFace(QString path)
 {
     int rect = 0;
+    /*调用核心存储函数*/
     rect = this->SavePhoto(this->imageSrc, this->faceResult, path);
 
     return rect;
+}
+
+void facedetec::VideoFaceColect(Mat& frame, int *result, QString &path)
+{
+    int     ret = 0;
+    QDir    dir;
+    if(path.isEmpty())
+    {
+        qDebug() << "func facedetec::VideoFaceColect()  check if(path.isEmpty())";
+        return;
+    }
+
+    /*如果文件夹不存在则创建文件夹*/
+    if(!dir.exists(path))
+    {
+       ret = dir.mkdir(path);
+       if(ret != 0)
+       {
+           qDebug() << "func facedetec::VideoFaceColect() mkdir error err: " << ret;
+           return;
+       }
+    }
+    /*存储头像*/
+    this->SavePhoto(frame, result, path);
+}
+
+void facedetec::SetVideoColectPath(QString &path)
+{
+    if(path.isEmpty())
+    {
+        qDebug() << "func facedetec::SetVideoColectPath()  check if(path.isEmpty())";
+        return;
+    }
+    this->videoColectPath = path;
+}
+
+void facedetec::SetStartCloecFace(bool flag)
+{
+    this->startCloecFace = flag;
+}
+
+void facedetec::VideoCollectInit(QString &path, bool flag)
+{
+    this->SetVideoColectPath(path);
+    this->SetStartCloecFace(flag);
 }

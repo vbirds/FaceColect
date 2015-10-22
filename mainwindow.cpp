@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->Start_toolButton, SIGNAL(clicked(bool)), this, SLOT(videodec()));
     QObject::connect(ui->Photo_toolButton, SIGNAL(clicked(bool)), this, SLOT(photodetec()));
     QObject::connect(ui->Save_toolButton, SIGNAL(clicked(bool)), this, SLOT(Saveface()));
+    QObject::connect(ui->Collect_toolButton, SIGNAL(clicked(bool)), this, SLOT(FaceCollect()));
 }
 
 MainWindow::~MainWindow()
@@ -46,4 +47,11 @@ void MainWindow::Saveface()
     rec = this->face->SaveFace(path);
 
     QMessageBox::information(NULL, "success", "Save success");
+}
+
+void MainWindow::FaceCollect()
+{
+    QString path = "D:/QtMsvcProjects/face/03";
+
+    this->face->VideoCollectInit(path, true);
 }
