@@ -97,7 +97,7 @@ void facedetec::DrawFace(Mat& frame, int *result)
         int h = p[3];
 
         Rect face_i = Rect(x, y, w, h);
-        rectangle(frame, face_i, CV_RGB(0, 255,0), 1);
+        rectangle(frame, face_i, CV_RGB(0, 255,0), 3);
     }
     imshow("face", frame);
 }

@@ -27,8 +27,7 @@ public:
 
     void Detecface(QString& path);
 
-    void Detecface(Mat& frame, int **result);
-
+    void BaseDetec(Mat& frame, int **result);
     void VideoDetecFace(int deiverId = 0);
 
     void DrawFace(Mat&frame, int* result);
@@ -46,7 +45,7 @@ public:
     void SetStartCloecFace(bool flag);
 
 private:
-    void BaseDetec(Mat& frame, int **result);
+
     //摄像头人脸采集函数
     void VideoFaceColect(Mat& frame, int *result, QString& path);
 

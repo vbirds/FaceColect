@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>摄像头识别</string>
+     <string>摄像人脸检测</string>
     </property>
     <property name="autoRaise">
      <bool>false</bool>
@@ -40,7 +40,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>图片识别</string>
+     <string>图片检测</string>
     </property>
     <property name="autoRaise">
      <bool>false</bool>
@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>图片识别头像保存</string>
+     <string>图片人脸头像保存</string>
     </property>
     <property name="autoRaise">
      <bool>false</bool>
@@ -73,6 +73,38 @@
     </property>
     <property name="text">
      <string>摄像头人脸采集</string>
+    </property>
+    <property name="autoRaise">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="Train_toolButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>71</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>训练</string>
+    </property>
+    <property name="autoRaise">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="Recface_toolButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>71</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>摄像识别</string>
     </property>
     <property name="autoRaise">
      <bool>false</bool>

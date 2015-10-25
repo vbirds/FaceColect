@@ -65,10 +65,12 @@ LIBS += -LD:/OpenCVSrc/opencv/build/x86/vc11/lib \
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    facedetec.cpp
+    facedetec.cpp \
+    facerecognize.cpp
 
 HEADERS  += mainwindow.h \
     facedetect-dll.h \
-    facedetec.h
+    facedetec.h \
+    facerecognize.h
 
 FORMS    += mainwindow.ui

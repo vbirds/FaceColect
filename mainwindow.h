@@ -4,7 +4,9 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QString>
 #include "facedetec.h"
+#include "facerecognize.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,10 +27,14 @@ private slots:
 
     void FaceCollect();
 
+    void Trainxml();
+    void FaceRec();
+
 
 private:
     Ui::MainWindow *ui;
     facedetec *face;
+    facerecognize *rec;
     QString   faceCollectPath;
 
 };
