@@ -26,14 +26,18 @@ void facedetec::Detecface(QString &path)
     this->imageSrc.release();
     Mat frame = imread(rotepath);
     this->imageSrc = frame.clone();
-    if(this->faceResult)
+
+    if(this->faceResult != NULL)
     {
-        free(this->faceResult);
+        //free(this->faceResult);
         this->faceResult = NULL;
     }
+
     this->BaseDetec(frame, &(this->faceResult));
     this->DrawFace(frame, this->faceResult);
-    waitKey(30);
+    char key = (char) waitKey(20);
+    if(key == 27)
+        return;
 
 }
 
@@ -48,12 +52,16 @@ void facedetec::BaseDetec(Mat &frame, int **result)
     int *pResult = NULL;
     Mat gray = frame.clone();
     cvtColor(gray,gray,CV_BGR2GRAY);
-
+    /***************************
+     * 这个已经在Detecface中有了
+     * jhz 10.26.2015
     if(this->faceResult != NULL)
     {
-        free(this->faceResult);
+        //free(this->faceResult);
         this->faceResult = NULL;
     }
+    */
+
     pResult = facedetect_frontal((unsigned char*)(gray.ptr(0)), gray.cols, gray.rows, gray.step,
                                           1.2f, 2,  24);
     *result = pResult;
@@ -78,6 +86,12 @@ void facedetec::VideoDetecFace(int deiverId)
                 num++;
                 this->VideoSavePhoto(frame, result, this->videoColectPath, num);
                 qDebug() << num;
+                //采集20张头像
+                if(num == 20)
+                {
+                    this->startCloecFace = false;
+                    break;
+                }
             }
             char key = (char) waitKey(20);
             if(key == 27)
@@ -97,7 +111,7 @@ void facedetec::DrawFace(Mat& frame, int *result)
         int h = p[3];
 
         Rect face_i = Rect(x, y, w, h);
-        rectangle(frame, face_i, CV_RGB(0, 255,0), 3);
+        rectangle(frame, face_i, CV_RGB(0, 255,0), 2);
     }
     imshow("face", frame);
 }

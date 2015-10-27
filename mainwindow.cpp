@@ -55,7 +55,7 @@ void MainWindow::Saveface()
 
 void MainWindow::FaceCollect()
 {
-    QString path = "D:/QtMsvcProjects/face/03";
+    QString path = "D:/QtMsvcProjects/face/07";
 
     this->face->VideoCollectInit(path, true);
 }

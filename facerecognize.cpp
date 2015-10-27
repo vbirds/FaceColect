@@ -12,7 +12,11 @@ facerecognize::facerecognize()
 
     this->output_folder = "./face.xml";
 
-    mapint[4] = "jhz";
+    mapint[1] = "WL";
+    mapint[2] = "JHZ";
+    mapint[3] = "XSY";
+    mapint[4] = "ZZC";
+    mapint[5] = "CZM";
 
 }
 
@@ -143,7 +147,7 @@ void facerecognize::Recognize(Mat &image, int *result, std::vector<int>& list)
         plist.push_back(prediction);
 
         string box_text;
-        box_text = format("Prediction = ");
+        //box_text = format("Prediction = ");
         rectangle(image, face_i, CV_RGB(0, 255,0), 2);
         if(prediction >= 0)
         {
