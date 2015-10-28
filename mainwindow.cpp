@@ -47,7 +47,10 @@ void MainWindow::photodetec()
 void MainWindow::Saveface()
 {
     int rec = 0;
-    QString path = "D:/QtMsvcProjects/face/02";
+    QString path = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                     QDir::currentPath(),
+                                                     QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+                                                     );
     rec = this->face->SaveFace(path);
 
     QMessageBox::information(NULL, "success", "Save success");
@@ -55,7 +58,10 @@ void MainWindow::Saveface()
 
 void MainWindow::FaceCollect()
 {
-    QString path = "D:/QtMsvcProjects/face/07";
+    QString path = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                     QDir::currentPath(),
+                                                     QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+                                                     );
 
     this->face->VideoCollectInit(path, true);
 }
@@ -63,7 +69,10 @@ void MainWindow::FaceCollect()
 void MainWindow::Trainxml()
 {
     int ret;
-    QString path = "D:/QtProject/att_faces/at.txt";
+    QString path = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                QDir::currentPath(),
+                                                tr("txtFile (*.* *.txt)")
+                                                );
     ret = this->rec->Learn(path);
 
     if(ret == 0)

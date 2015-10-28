@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>images/face_detect_1195571_easyicon.net.svg</file>
+        <file>images/face_recognition_scan_64px_1169929_easyicon.net.png</file>
+        <file>images/face_recognition_scan_512px_1169929_easyicon.net.png</file>
+        <file>images/landscape_1195577_easyicon.net.svg</file>
+        <file>images/metering_center_1195579_easyicon.net.svg</file>
+        <file>images/metering_evaluative_1195580_easyicon.net.svg</file>
+        <file>images/metering_partial_1195581_easyicon.net.svg</file>
+        <file>images/opened_folder_64px_1170284_easyicon.net.png</file>
+        <file>images/training_plan_256px_1146065_easyicon.net.png</file>
+        <file>images/file_save_474px_1173837_easyicon.net.png</file>
+        <file>images/backgroup.PNG</file>
+        <file>images/face_detect.png</file>
+    </qresource>
+</RCC>

@@ -74,3 +74,6 @@ HEADERS  += mainwindow.h \
     facerecognize.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    qrc.qrc

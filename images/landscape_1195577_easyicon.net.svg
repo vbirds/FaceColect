@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 44 32" enable-background="new 0 0 44 32" xml:space="preserve">
+<g id="landscapesvg">
+	<path id="path-1" d="M42,32H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h40c1.1,0,2,0.9,2,2v28C44,31.1,43.1,32,42,32z M42,2H2v28h40V2z"
+		/>
+	<circle id="circle-1" cx="35" cy="9" r="3"/>
+	<path id="path-2" opacity="0.25" d="M2,19.8l11.8-7.4c0.7-0.4,1.6-0.4,2.3,0.1l14.4,11.2c0.9,0.7,2.2,0.8,3.2,0.3l8.3-4.2V30H2
+		V19.8z"/>
+	<path id="path-3" d="M2,20.5l11.8-7.3c0.3-0.2,0.7-0.3,1.1-0.3c0.4,0,0.9,0.1,1.2,0.4l14.4,11c0.5,0.4,1.2,0.6,1.8,0.6
+		c0.5,0,0.9-0.1,1.4-0.3l8.3-4.2l2-1v-2.2l-2.9,1.5l-8.3,4.2C32.7,23,32.5,23,32.3,23c-0.2,0-0.4-0.1-0.6-0.2l-14.4-11
+		c-0.7-0.5-1.6-0.8-2.4-0.8l0,0c-0.8,0-1.5,0.2-2.1,0.6L0.9,18.8L0,19.4v2.1L2,20.5z"/>
+</g>
+</svg>
