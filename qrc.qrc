@@ -12,5 +12,6 @@
         <file>images/file_save_474px_1173837_easyicon.net.png</file>
         <file>images/backgroup.PNG</file>
         <file>images/face_detect.png</file>
+        <file>images/login.png</file>
     </qresource>
 </RCC>

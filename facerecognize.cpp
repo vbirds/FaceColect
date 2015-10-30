@@ -2,7 +2,8 @@
 
 facerecognize::facerecognize()
 {
-    this->model =  createFisherFaceRecognizer(10);
+    //this->model =  createFisherFaceRecognizer(20);
+    this->model = createLBPHFaceRecognizer(1, 5, 5, 5);
     this->faceDetec = new facedetec();
     this->loaded = false;
     this->readcsved = false;
@@ -17,6 +18,9 @@ facerecognize::facerecognize()
     mapint[3] = "XSY";
     mapint[4] = "ZZC";
     mapint[5] = "CZM";
+    mapint[6] = "XD";
+    mapint[7] = "YYF";
+    mapint[8] = "WYQ";
 
 }
 
@@ -88,7 +92,6 @@ void facerecognize::LoadTrainFile(QString& path)
 
 void facerecognize::VideoRecognize(int driverId)
 {
-    int                   num = 0;
     std::vector<int>      list;
 
     if(!this->model || !this->faceDetec)

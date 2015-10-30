@@ -6,15 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>305</height>
+    <width>477</width>
+    <height>296</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Face</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="qrc.qrc">
+    <normaloff>:/new/prefix1/images/face_recognition_scan_512px_1169929_easyicon.net.png</normaloff>:/new/prefix1/images/face_recognition_scan_512px_1169929_easyicon.net.png</iconset>
+  </property>
+  <property name="accessibleName">
+   <string notr="true"/>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -22,178 +34,141 @@
   <property name="documentMode">
    <bool>false</bool>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="QToolButton" name="Start_toolButton">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>190</y>
-      <width>51</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>摄像人脸检测</string>
-    </property>
-    <property name="icon">
-     <iconset resource="qrc.qrc">
-      <normaloff>:/new/prefix1/images/face_recognition_scan_64px_1169929_easyicon.net.png</normaloff>:/new/prefix1/images/face_recognition_scan_64px_1169929_easyicon.net.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>52</width>
-      <height>52</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="Photo_toolButton">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>190</y>
-      <width>51</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>图片检测</string>
-    </property>
-    <property name="icon">
-     <iconset resource="qrc.qrc">
-      <normaloff>:/new/prefix1/images/landscape_1195577_easyicon.net.svg</normaloff>:/new/prefix1/images/landscape_1195577_easyicon.net.svg</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>52</width>
-      <height>52</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="Save_toolButton">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>190</y>
-      <width>51</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="inputMethodHints">
-     <set>Qt::ImhNone</set>
-    </property>
-    <property name="text">
-     <string>图片人脸头像保存</string>
-    </property>
-    <property name="icon">
-     <iconset resource="qrc.qrc">
-      <normaloff>:/new/prefix1/images/file_save_474px_1173837_easyicon.net.png</normaloff>:/new/prefix1/images/file_save_474px_1173837_easyicon.net.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>52</width>
-      <height>52</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="Collect_toolButton">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>190</y>
-      <width>61</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>摄像头人脸采集</string>
-    </property>
-    <property name="icon">
-     <iconset resource="qrc.qrc">
-      <normaloff>:/new/prefix1/images/metering_evaluative_1195580_easyicon.net.svg</normaloff>:/new/prefix1/images/metering_evaluative_1195580_easyicon.net.svg</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>52</width>
-      <height>52</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="Train_toolButton">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>190</y>
-      <width>61</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>训练</string>
-    </property>
-    <property name="icon">
-     <iconset resource="qrc.qrc">
-      <normaloff>:/new/prefix1/images/training_plan_256px_1146065_easyicon.net.png</normaloff>:/new/prefix1/images/training_plan_256px_1146065_easyicon.net.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>52</width>
-      <height>52</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="Recface_toolButton">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>190</y>
-      <width>51</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>摄像识别</string>
-    </property>
-    <property name="icon">
-     <iconset resource="qrc.qrc">
-      <normaloff>:/new/prefix1/images/face_detect.png</normaloff>:/new/prefix1/images/face_detect.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>54</width>
-      <height>54</height>
-     </size>
-    </property>
-    <property name="autoRaise">
-     <bool>true</bool>
-    </property>
-   </widget>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>25</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="Photo_action"/>
+   <addaction name="Start_action"/>
+   <addaction name="separator"/>
+   <addaction name="Recface_action"/>
+   <addaction name="separator"/>
+   <addaction name="Train_action"/>
+   <addaction name="separator"/>
+   <addaction name="Save_action"/>
+   <addaction name="Collect_action"/>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>457</width>
-     <height>23</height>
+     <width>477</width>
+     <height>40</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_J">
+    <property name="title">
+     <string>检测(&amp;J)</string>
+    </property>
+    <addaction name="Photo_action"/>
+    <addaction name="Start_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_S">
+    <property name="title">
+     <string>识别(&amp;S)</string>
+    </property>
+    <addaction name="Recface_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_X">
+    <property name="title">
+     <string>
+训练(&amp;X)</string>
+    </property>
+    <addaction name="Train_action"/>
+   </widget>
+   <widget class="QMenu" name="menu_C">
+    <property name="title">
+     <string>采集(&amp;C)</string>
+    </property>
+    <addaction name="Save_action"/>
+    <addaction name="Collect_action"/>
+   </widget>
+   <addaction name="menu_J"/>
+   <addaction name="menu_S"/>
+   <addaction name="menu_X"/>
+   <addaction name="menu_C"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <action name="Photo_action">
+   <property name="icon">
+    <iconset resource="qrc.qrc">
+     <normaloff>:/new/prefix1/images/landscape_1195577_easyicon.net.svg</normaloff>:/new/prefix1/images/landscape_1195577_easyicon.net.svg</iconset>
+   </property>
+   <property name="text">
+    <string>图片人脸检测(&amp;T)</string>
+   </property>
+  </action>
+  <action name="Start_action">
+   <property name="icon">
+    <iconset resource="qrc.qrc">
+     <normaloff>:/new/prefix1/images/face_recognition_scan_512px_1169929_easyicon.net.png</normaloff>:/new/prefix1/images/face_recognition_scan_512px_1169929_easyicon.net.png</iconset>
+   </property>
+   <property name="text">
+    <string>摄像人脸检测(&amp;V)</string>
+   </property>
+  </action>
+  <action name="Recface_action">
+   <property name="icon">
+    <iconset resource="qrc.qrc">
+     <normaloff>:/new/prefix1/images/face_detect.png</normaloff>:/new/prefix1/images/face_detect.png</iconset>
+   </property>
+   <property name="text">
+    <string>摄像识别(&amp;R)</string>
+   </property>
+  </action>
+  <action name="Train_action">
+   <property name="icon">
+    <iconset resource="qrc.qrc">
+     <normaloff>:/new/prefix1/images/training_plan_256px_1146065_easyicon.net.png</normaloff>:/new/prefix1/images/training_plan_256px_1146065_easyicon.net.png</iconset>
+   </property>
+   <property name="text">
+    <string>训练xml(&amp;M)</string>
+   </property>
+  </action>
+  <action name="Save_action">
+   <property name="icon">
+    <iconset resource="qrc.qrc">
+     <normaloff>:/new/prefix1/images/file_save_474px_1173837_easyicon.net.png</normaloff>:/new/prefix1/images/file_save_474px_1173837_easyicon.net.png</iconset>
+   </property>
+   <property name="text">
+    <string>图片头像采集(&amp;B)</string>
+   </property>
+  </action>
+  <action name="Collect_action">
+   <property name="icon">
+    <iconset resource="qrc.qrc">
+     <normaloff>:/new/prefix1/images/metering_evaluative_1195580_easyicon.net.svg</normaloff>:/new/prefix1/images/metering_evaluative_1195580_easyicon.net.svg</iconset>
+   </property>
+   <property name="text">
+    <string>视频人脸采集(&amp;L)</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

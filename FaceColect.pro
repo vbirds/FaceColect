@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -66,14 +66,17 @@ LIBS += -LD:/OpenCVSrc/opencv/build/x86/vc11/lib \
 SOURCES += main.cpp\
         mainwindow.cpp \
     facedetec.cpp \
-    facerecognize.cpp
+    facerecognize.cpp \
+    login.cpp
 
 HEADERS  += mainwindow.h \
     facedetect-dll.h \
     facedetec.h \
-    facerecognize.h
+    facerecognize.h \
+    login.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    login.ui
 
 RESOURCES += \
     qrc.qrc

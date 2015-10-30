@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->face = new facedetec();
     this->rec = new facerecognize();
-
+    /*
     QObject::connect(ui->Start_toolButton, SIGNAL(clicked(bool)), this, SLOT(videodec()));
     QObject::connect(ui->Photo_toolButton, SIGNAL(clicked(bool)), this, SLOT(photodetec()));
     QObject::connect(ui->Save_toolButton, SIGNAL(clicked(bool)), this, SLOT(Saveface()));
@@ -16,6 +16,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QObject::connect(ui->Train_toolButton, SIGNAL(clicked(bool)), this, SLOT(Trainxml()));
     QObject::connect(ui->Recface_toolButton,SIGNAL(clicked(bool)), this, SLOT(FaceRec()));
+    */
+    QObject::connect(ui->Start_action, SIGNAL(triggered(bool)), this, SLOT(videodec()));
+    QObject::connect(ui->Photo_action, SIGNAL(triggered(bool)), this, SLOT(photodetec()));
+    QObject::connect(ui->Save_action, SIGNAL(triggered(bool)), this, SLOT(Saveface()));
+    QObject::connect(ui->Collect_action, SIGNAL(triggered(bool)), this, SLOT(FaceCollect()));
+
+    QObject::connect(ui->Train_action, SIGNAL(triggered(bool)), this, SLOT(Trainxml()));
+    QObject::connect(ui->Recface_action,SIGNAL(triggered(bool)), this, SLOT(FaceRec()));
+
 }
 
 MainWindow::~MainWindow()

@@ -5,6 +5,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QString>
+#include <QFile>
+#include <QTextStream>
 #include "facedetec.h"
 #include "facerecognize.h"
 
