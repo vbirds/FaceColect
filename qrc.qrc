@@ -13,5 +13,6 @@
         <file>images/backgroup.PNG</file>
         <file>images/face_detect.png</file>
         <file>images/login.png</file>
+        <file>images/back.jpg</file>
     </qresource>
 </RCC>

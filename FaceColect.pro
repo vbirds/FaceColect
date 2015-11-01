@@ -67,13 +67,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     facedetec.cpp \
     facerecognize.cpp \
-    login.cpp
+    login.cpp \
+    connection.cpp
 
 HEADERS  += mainwindow.h \
     facedetect-dll.h \
     facedetec.h \
     facerecognize.h \
-    login.h
+    login.h \
+    connection.h \
+    dbconnection.h
 
 FORMS    += mainwindow.ui \
     login.ui

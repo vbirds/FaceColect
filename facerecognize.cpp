@@ -2,8 +2,8 @@
 
 facerecognize::facerecognize()
 {
-    //this->model =  createFisherFaceRecognizer(20);
-    this->model = createLBPHFaceRecognizer(1, 5, 5, 5);
+    this->model =  createFisherFaceRecognizer(20);
+    //this->model = createLBPHFaceRecognizer(1, 5, 5, 5);
     this->faceDetec = new facedetec();
     this->loaded = false;
     this->readcsved = false;
@@ -21,6 +21,7 @@ facerecognize::facerecognize()
     mapint[6] = "XD";
     mapint[7] = "YYF";
     mapint[8] = "WYQ";
+    mapint[9] = "YY";
 
 }
 
